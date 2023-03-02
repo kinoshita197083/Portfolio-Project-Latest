@@ -1,12 +1,45 @@
+@import url(./Home/home.css);
+@import url(./Skills/skills.css);
+@import url(./About/about.css);
+@import url(./Project/project.css);
+
+
 :root {
-    --nav-bg-color: black;
+    --theme-font-color: white;
+    --theme-bg-color: black;
+
+    --line-height: 160%;
+
+    --nav-bg-color: transparent;
+    --nav-mobile-bg-color: black;
     --nav-height: 50px;
     --nav-font-color: white;
     --nav-logo-font-size: 1.5rem;
-    --nav-hover-color: rgb(181, 42, 42);
+    --nav-hover-color: rgb(80, 94, 247);
 
+    --btn-color: tomato;
+    --btn-font-size: 0.8rem;
 
+    --title-font-size: 4rem;
+    --subtitle-font-size: 3rem;
+    --signature-font-size: 1rem;
+
+    --section-heading-font-size: 2.5rem;
+    --section-text-font-size: 1.2rem;
+    --section-text-mobile-font-size: 0.9rem;
+
+    --profile-bg-color: linear-gradient(45deg,
+            #12c2e9,
+            #c471ed,
+            #f64f59);
+
+    --theme-bg-animated: linear-gradient(45deg,
+            #12c2e9,
+            #c471ed,
+            #f64f59);
 }
+
+/* Reset */
 
 * {
     padding: 0;
@@ -14,17 +47,72 @@
     list-style: none;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: black;
+    /* background-image: var(--theme-bg-animated); */
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+button {
+    border: 0;
+    padding: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    outline: inherit;
+}
+
+i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+a:visited {
+    color: white;
+}
+
+/* CSS */
+
+.container-top-0 {
+    padding: 3% 6% 6% 0%;
+}
+
+.container {
+    background-color: var(--theme-bg-color);
+    padding: 6%;
+}
+
+.btn {
+    background-color: var(--btn-color);
+    color: var(--theme-font-color);
+    font-size: var(--btn-font-size);
+    width: 7rem;
+    padding: 1% 1%;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
 .nav-container {
     background-color: var(--nav-bg-color);
     width: 100%;
+    z-index: 99;
 
     position: fixed;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-bar {
@@ -47,7 +135,7 @@ html {
 
 .nav-menu {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     text-align: center;
     width: 40%;
     justify-self: end;
@@ -75,9 +163,23 @@ html {
     display: none;
 }
 
+.section-heading {
+    font-size: var(--section-heading-font-size);
+    color: var(--theme-font-color);
+    margin-bottom: 3%;
+}
+
+.section-text {
+    font-size: var(--section-text-font-size);
+    color: var(--theme-font-color);
+    width: 50%;
+    line-height: var(--line-height);
+}
+
 @media (max-width: 800px) {
     .nav-container {
         position: relative;
+        background-color: var(--nav-mobile-bg-color);
     }
 
     .nav-bar {
@@ -96,13 +198,13 @@ html {
         top: 50px;
         opacity: 0;
         height: 0;
-        background-color: var(--nav-bg-color);
+        background-color: var(--nav-mobile-bg-color);
         transition: all 0.4s ease-in-out;
-        /* visibility: hidden; */
+        visibility: hidden;
     }
 
     .nav-menu.active {
-        opacity: 1;
+        opacity: 0.9;
         height: 480px;
         visibility: visible;
     }
@@ -146,5 +248,12 @@ html {
 
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .section-text {
+        font-size: var(--section-text-mobile-font-size);
+        color: var(--theme-font-color);
+        line-height: var(--line-height);
+        width: 100%;
     }
 }

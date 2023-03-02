@@ -1,0 +1,52 @@
+.project {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+}
+
+.project:nth-of-type(odd) .card-wrapper {
+    background-color: rgb(26, 26, 26);
+    box-shadow: 60px -16px teal;
+}
+
+.project:nth-of-type(even) .card-wrapper {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 60px -16px rgb(78, 91, 212);
+}
+
+.card-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.project-description {
+    margin: 0 auto;
+    line-height: var(--line-height);
+    width: 80%;
+}
+
+.card-title {
+    color: var(--theme-font-color);
+}
+
+.card-description {
+    color: var(--theme-font-color);
+    margin-block: 7%;
+}
+
+.stack {
+    display: flex;
+    color: var(--theme-font-color);
+    gap: 5%;
+}
+
+.showcase {
+    margin-block: 10%;
+}
+
+@media (max-width: 800px) {
+    .project {
+        margin-top: 25%;
+    }
+}
