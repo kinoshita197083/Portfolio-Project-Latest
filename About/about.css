@@ -30,39 +30,6 @@
     z-index: +1;
 }
 
-.scroll-wrapper {
-    width: 50%;
-    overflow: hidden;
-    margin-top: 5%;
-    position: relative;
-}
-
-.infinite-scroll {
-    display: flex;
-    gap: 1.5rem;
-    width: calc(48px * 26);
-    color: var(--theme-font-color);
-    animation: scroll 20s linear infinite alternate;
-}
-
-.infinite-scroll:hover {
-    animation-play-state: paused;
-}
-
-.infinite-scroll i {
-    cursor: inherit;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-48px * 13));
-    }
-}
-
 @media (max-width: 800px) {
     #profile-pic {
         display: none;

@@ -132,12 +132,19 @@ a:visited {
     line-height: var(--line-height);
 }
 
-@media (max-width: 800px) {
+br {
+    display: none;
+}
 
+@media (max-width: 800px) {
     .section-text {
         font-size: var(--section-text-mobile-font-size);
         color: var(--theme-font-color);
         line-height: var(--line-height);
         width: 100%;
+    }
+
+    br {
+        display: block;
     }
 }
