@@ -1,5 +1,5 @@
+@import url(./NavBar/navbar.css);
 @import url(./Home/home.css);
-@import url(./Skills/skills.css);
 @import url(./About/about.css);
 @import url(./Project/project.css);
 
@@ -33,10 +33,7 @@
             #c471ed,
             #f64f59);
 
-    --theme-bg-animated: linear-gradient(45deg,
-            #12c2e9,
-            #c471ed,
-            #f64f59);
+    --theme-bg-animated: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(7, 21, 74) 98.8%);
 }
 
 /* Reset */
@@ -51,12 +48,26 @@
 }
 
 body {
-    background-color: black;
-    /* background-image: var(--theme-bg-animated); */
+    /* background-color: rgb(0, 0, 0); */
+    background-image: var(--theme-bg-animated);
+    /* reference: https://www.youtube.com/watch?v=f3mwKLXpOLk&t=453s&ab_channel=KevinPowell */
+    background-size: 400%;
+    animation: bg-animation 20s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: black;
 }
 
 button {
@@ -73,18 +84,20 @@ i {
     cursor: pointer;
 }
 
-a:visited {
-    color: white;
+a {
+    color: var(--theme-font-color);
 }
 
-/* CSS */
+a:visited {
+    color: var(--theme-font-color);
+}
 
+/* shared CSS */
 .container-top-0 {
     padding: 3% 6% 6% 0%;
 }
 
 .container {
-    background-color: var(--theme-bg-color);
     padding: 6%;
 }
 
@@ -106,63 +119,6 @@ a:visited {
     border: 1px solid white;
 }
 
-.nav-container {
-    background-color: var(--nav-bg-color);
-    width: 100%;
-    z-index: 99;
-
-    position: fixed;
-    transition: all 0.3s ease-in-out;
-}
-
-.nav-bar {
-    height: var(--nav-height);
-    display: grid;
-    grid-template-columns: 0.2fr auto 1fr;
-    align-items: center;
-    width: 90%;
-    /* In case the screen size is huge */
-    max-width: 1720px;
-    margin: 0 auto;
-}
-
-.nav-logo {
-    justify-self: start;
-    color: var(--nav-font-color);
-    font-size: var(--nav-logo-font-size);
-    cursor: pointer;
-}
-
-.nav-menu {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    text-align: center;
-    width: 40%;
-    justify-self: end;
-}
-
-.nav-menu li {
-    padding: 0;
-}
-
-.nav-links {
-    color: var(--nav-font-color);
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-links:hover {
-    color: var(--nav-hover-color);
-}
-
-.menu-toggle .bar {
-    background-color: white;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    display: none;
-}
-
 .section-heading {
     font-size: var(--section-heading-font-size);
     color: var(--theme-font-color);
@@ -177,78 +133,6 @@ a:visited {
 }
 
 @media (max-width: 800px) {
-    .nav-container {
-        position: relative;
-        background-color: var(--nav-mobile-bg-color);
-    }
-
-    .nav-bar {
-        width: 100%;
-    }
-
-    .nav-logo {
-        margin-left: 35%;
-    }
-
-    .nav-menu {
-        position: absolute;
-        display: grid;
-        grid-template-columns: auto;
-        width: 100%;
-        top: 50px;
-        opacity: 0;
-        height: 0;
-        background-color: var(--nav-mobile-bg-color);
-        transition: all 0.4s ease-in-out;
-        visibility: hidden;
-    }
-
-    .nav-menu.active {
-        opacity: 0.9;
-        height: 480px;
-        visibility: visible;
-    }
-
-    .nav-menu li {
-        text-align: center;
-    }
-
-    .nav-links {
-        display: block;
-        line-height: 120px;
-        text-align: center;
-        font-size: 1.1rem;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .nav-links:hover {
-        background-color: var(--nav-hover-color);
-        color: var(--nav-font-color);
-    }
-
-    #mobile-menu {
-        position: absolute;
-        top: 30%;
-        right: 6%;
-        transform: translate(0%, -10%);
-        cursor: pointer;
-    }
-
-    .menu-toggle .bar {
-        display: block;
-    }
-
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
 
     .section-text {
         font-size: var(--section-text-mobile-font-size);

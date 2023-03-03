@@ -1,0 +1,131 @@
+.nav-container {
+    background-color: var(--nav-bg-color);
+    width: 100%;
+    z-index: 99;
+
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-bar {
+    height: var(--nav-height);
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    width: 90%;
+    /* In case the screen size is huge */
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    justify-self: start;
+    color: var(--nav-font-color);
+    font-size: var(--nav-logo-font-size);
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    text-align: center;
+    width: 40%;
+    justify-self: end;
+}
+
+.nav-menu li {
+    padding: 0;
+}
+
+.nav-links {
+    color: var(--nav-font-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-links:hover {
+    color: var(--nav-hover-color);
+}
+
+.menu-toggle .bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .nav-container {
+        position: relative;
+        background-color: var(--nav-mobile-bg-color);
+    }
+
+    .nav-bar {
+        width: 100%;
+    }
+
+    .nav-logo {
+        margin-left: 35%;
+    }
+
+    .nav-menu {
+        position: absolute;
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        top: 50px;
+        opacity: 0;
+        height: 0;
+        background-color: var(--nav-mobile-bg-color);
+        transition: all 0.4s ease-in-out;
+        visibility: hidden;
+    }
+
+    .nav-menu.active {
+        opacity: 0.9;
+        height: 480px;
+        visibility: visible;
+    }
+
+    .nav-menu li {
+        text-align: center;
+    }
+
+    .nav-links {
+        display: block;
+        line-height: 120px;
+        text-align: center;
+        font-size: 1.1rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links:hover {
+        background-color: var(--nav-hover-color);
+        color: var(--nav-font-color);
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 30%;
+        right: 6%;
+        transform: translate(0%, -10%);
+        cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

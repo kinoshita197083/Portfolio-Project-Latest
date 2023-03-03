@@ -41,12 +41,31 @@
     gap: 5%;
 }
 
+.stack i {
+    cursor: inherit;
+}
+
 .showcase {
     margin-block: 10%;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: all 0.7s ease-in;
+}
+
+.fade-in.active {
+    opacity: 1;
 }
 
 @media (max-width: 800px) {
     .project {
         margin-top: 25%;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .fade-in {
+        transition: none;
     }
 }
