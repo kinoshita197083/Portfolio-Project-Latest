@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="./Asset/portfolio-icon.png">
+    <!-- Website Title & Icon -->
+    <link rel="icon" type="image/x-icon" href="./Asset/portfolio-icon-croped.png">
     <title>Franky</title>
 
     <!-- Google Fonts -->
@@ -42,23 +43,28 @@
         </nav>
     </header>
 
-    <section id="home">
-        <div class="container-top-0 fade-in">
+    <main id="home">
+        <div class="container-top-0 home-fade-in">
 
             <article class="landing-content">
                 <h1 class="title">Franky Chen</h1>
                 <p class="sub-title">Frontend Developer <br> <span>AWS Certified Solution Architect Associate</span></p>
             </article>
         </div>
-    </section>
+    </main>
 
     <section id="about">
         <article class="about-container">
             <h2 class="section-heading">ABOUT</h2>
             <p class="section-text"> A highly adaptive and multicultural individual who has a keen interest in frontend
                 development and cloud computing</p> <br>
-            <p class="section-text">Aim to develop T-shape skill set, broad in general, and deep in specific
-            </p>
+            <p class="section-text margin-block-3">Aim to develop T-shape skill set, broad in general, and deep in
+                specific</p> <br>
+            <p class="stack"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
+                    class="fa-brands fa-square-js"></i><i class="fa-brands fa-aws"></i><i
+                    class="fa-brands fa-react"></i><i class="fa-brands fa-python"></i><i
+                    class="fa-brands fa-java"></i><i class="fa-solid fa-database"></i><i
+                    class="fa-brands fa-docker"></i><i class="fa-brands fa-wordpress"></i></p>
         </article>
         <div class="profile-img-wrapper">
             <img id="profile-pic" src="./Asset/self-crop.png" alt="profile image" width="100%" height="100%">
@@ -74,9 +80,9 @@
                 </div>
                 <article class="project-description">
                     <h3 class="card-title">Image Analysis</h3>
-                    <p class="card-description">An image analysis web App that can detect image label backed by AI-based
-                        web service - AWS Rekognition. It is a fully responsive single-page web application developed
-                        with plain CSS, HTML, JS without using any frameworks</p>
+                    <p class="card-description">An image analysis web App that can detect image label powered by AWS
+                        Rekognition - AI web service. It is a multi-tier architecture with VanillaJs as frontend, AWS
+                        Lambda (python) as backend, and DynamoDB (NoSQL) as the database tier.</p>
                     <p class="stack">Stacks: <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
                             class="fa-brands fa-square-js"></i><i class="fa-brands fa-aws"></i><i
                             class="fa-brands fa-python"></i><i class="fa-solid fa-database"></i></p>
@@ -94,10 +100,12 @@
                 </div>
                 <article class="project-description">
                     <h3 class="card-title">Grauation Project</h3>
-                    <p class="card-description">IT for social good project, developed with a multicultural and
+                    <p class="card-description">IT for social good project, developed with a
+                        multicultural and
                         cross-functional Agile team. A muti-tier web application with React frontend, serverless backend
-                        (python) and Amazon RDS (MySQL) as the database layer. Machine-Learning model was schduled as a
-                        CRON task running daily and the results have been storing in the RDS for frontend fetching.</p>
+                        (python) and Amazon RDS (MySQL) as the database tier. Machine-Learning model was schduled as a
+                        CRON task running daily and the results have been storing in the RDS for frontend displaying
+                        purpose. *Early experience in React.</p>
                     <p class="stack">Stacks: <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
                             class="fa-brands fa-react"></i><i class="fa-brands fa-aws"></i><i
                             class="fa-brands fa-python"></i><i class="fa-brands fa-linux"></i><i
@@ -140,7 +148,6 @@
                         was implemented to store user's data locally.</p>
                     <p class="stack">Stacks: <i class="fa-brands fa-android"></i><i class="fa-brands fa-java"></i></p>
                     <p class="stack showcase">
-                        <!-- <a href="" target="_blank"><button class="btn">Source Code</button></a> -->
                     </p>
                 </article>
             </div>
@@ -167,8 +174,40 @@
         </div>
     </section>
 
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <div class="even-columns">
+                <div class="left-section">
+                    <h2 class="section-heading">GET IN TOUCH</h2>
+                    <p class="section-text margin-bottom-3">Have a question?</p>
+                    <p class="section-text margin-bottom-3">Simply wanna grab a coffee?</p>
+                    <p class="section-text">Feel free to drop me an email</p>
+                </div>
+
+                <div class="right-section">
+                    <form onsubmit="submitForm" method="POST" id="contact-form">
+                        <label for="name" class="form-label">Name</label>
+                        <input id="name" class="form-input" type="text" required>
+
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" class="form-input" type="email" required>
+
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-input" type="text" rows="6" required></textarea>
+
+                        <input type="submit" class="submit-btn btn" value="Send">
+                    </form>
+                    <i class="fa-solid fa-spinner loading"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="snackbar"></div>
+
     <script src="NavBar/navbar.js"></script>
     <script src="./Project/project.js"></script>
+    <script src="./Contact/contact.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,72 @@
+#contact {
+    height: 60vh;
+    background-color: black;
+}
+
+#contact-form {
+    color: var(--theme-font-color);
+}
+
+input {
+    all: unset;
+}
+
+.form-input {
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgb(37, 36, 36);
+    color: var(--theme-font-color);
+    border-radius: 5px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+    text-align: start;
+    transition: 0.2s all ease-in-out;
+}
+
+.form-heading {
+    color: var(--theme-font-color);
+    font-size: 1.5rem;
+    margin-bottom: 5%;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 1%;
+}
+
+#message {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.left-section {
+    /* background-color: rgb(110, 110, 110); */
+}
+
+.right-section {
+    /* background-color: aquamarine; */
+    width: 90%;
+    padding: 2% 8%;
+    height: max-content;
+    position: relative;
+}
+
+.submit-btn.btn {
+    padding: 2% 0%;
+}
+
+@media (max-width: 800px) {
+    .card-layout {
+        margin: 0 auto;
+    }
+
+    .left-section {
+        margin-block: 10%;
+    }
+
+    .right-section {
+        width: 100%;
+    }
+}

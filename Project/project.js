@@ -1,4 +1,5 @@
-const fadeInElements = document.querySelectorAll('.fade-in');
+const fadeInElements = document.querySelectorAll('.fade-in'),
+    HomeFadeIn = document.querySelectorAll('.home-fade-in');
 
 // reference: https://www.youtube.com/watch?v=T33NN_pPeNI&t=19s&ab_channel=BeyondFireship
 
@@ -13,3 +14,7 @@ const observer = new IntersectionObserver(entries => {
 fadeInElements.forEach(el => {
     observer.observe(el);
 })
+
+HomeFadeIn.forEach(el => {
+    observer.observe(el);
+}) 

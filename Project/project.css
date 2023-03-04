@@ -3,6 +3,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
 }
 
 .project:nth-of-type(odd) .card-wrapper {
@@ -37,8 +40,12 @@
 
 .stack {
     display: flex;
+    /* flex-wrap: wrap; */
+    max-width: 35rem;
     color: var(--theme-font-color);
-    gap: 5%;
+    gap: 4%;
+    overflow: scroll;
+    box-sizing: border-box;
 }
 
 .stack i {
@@ -58,9 +65,30 @@
     opacity: 1;
 }
 
+.home-fade-in {
+    opacity: 0;
+    transition: all 2s ease-in;
+}
+
+.home-fade-in.active {
+    opacity: 1;
+}
+
 @media (max-width: 800px) {
     .project {
         margin-top: 25%;
+    }
+
+    .project:nth-of-type(odd) .card-wrapper {
+        box-shadow: 10px -16px teal;
+    }
+
+    .project:nth-of-type(even) .card-wrapper {
+        box-shadow: 10px -16px rgb(78, 91, 212);
+    }
+
+    #project {
+        margin-top: 15%;
     }
 }
 
