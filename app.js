@@ -21,7 +21,6 @@ function enlargeImage() {
 
         fullScreenElement.appendChild(imgElement);
         fullScreenElement.classList.add('active');
-        stopScrolling.classList.add('stop-scrolling');
     }
 }
 
@@ -29,7 +28,6 @@ function enlargeImage() {
 fullScreenElement.addEventListener('click', () => {
     fullScreenElement.classList.remove('active');
     fullScreenElement.removeChild(fullScreenElement.lastChild);
-    stopScrolling.classList.remove('stop-scrolling');
 })
 
 
