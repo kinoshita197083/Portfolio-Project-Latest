@@ -144,6 +144,11 @@ a:visited {
     margin-block: 5%;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .btn {
     background-color: var(--btn-color);
     color: var(--theme-font-color);

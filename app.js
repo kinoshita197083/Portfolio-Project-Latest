@@ -21,13 +21,15 @@ function enlargeImage() {
 
         fullScreenElement.appendChild(imgElement);
         fullScreenElement.classList.add('active');
+        stopScrolling.classList.add('stop-scrolling');
     }
 }
 
 //Click and close the full screen image
 fullScreenElement.addEventListener('click', () => {
     fullScreenElement.classList.remove('active');
-    fullScreenElement.removeChild(fullScreenElement.lastChild)
+    fullScreenElement.removeChild(fullScreenElement.lastChild);
+    stopScrolling.classList.remove('stop-scrolling');
 })
 
 
