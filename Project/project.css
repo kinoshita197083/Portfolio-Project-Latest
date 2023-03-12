@@ -91,6 +91,10 @@
     #project {
         margin-top: 15%;
     }
+
+    .project-description {
+        width: 90%;
+    }
 }
 
 @media (prefers-reduced-motion) {

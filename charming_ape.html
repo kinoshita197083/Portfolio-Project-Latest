@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Website Title & Icon -->
+    <link rel="icon" type="image/x-icon" href="./Asset/portfolio-icon-croped.png">
+    <title>Franky</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/fa0610f9a7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header class="nav-container">
+        <nav class="nav-bar">
+            <div class="nav-logo"><a href="./index.html#charming-ape"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#charming-ape" class="nav-links">Intro</a></li>
+                <li><a href="#architecture" class="nav-links">Architecture</a></li>
+                <li><a href="#deployment" class="nav-links">Deployment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="charming-ape" class="fade-in">
+        <div class="container-narrow">
+            <div class="project-section-container">
+                <h1 class="section-heading">CharmingApe</h1>
+                <p class="read-time">8 minute read</p>
+                <p class="section-content">CharmingApe is a web service which provides Monkeypox-related information
+                    targeting Autralian male workforce who may invovle frequent skin-to-skin contact. The main objective
+                    of the project is to spread awareness and provide a prediction of monkeypox cases on daily basis
+                    based on our self-developed Machine-learning Model.</p>
+                <p class="section-content">Type: Healthcare Sector</p>
+            </div>
+
+            <div class="main-img-wrapper">
+                <img src="./Asset/IE_cover_page.png" alt="System Architecture Img" height="100%" width="100%">
+            </div>
+
+            <br>
+
+            <section id="Problem Statement fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading">Problem Statement</h2>
+                    <p class="section-content">Recently there has been a rise of monkeypox cases in Australia, whereby
+                        Victoria and New South Wales to this day make up 43.3% and 44.4% of cases in Australia
+                        collectively. Globally, the data reflects males to make up 98.87% of cases with more than 50% of
+                        these cases being within the age range of 20-69. However, the top 4 infected countries show that
+                        the majority of their cases are inferred to lie within ages of 25-34. Monkeypox has been stated
+                        to have a higher rate of infection via extensive skin to skin contact, with a lower rate of
+                        infection via fluid. With countless people working in the service industry requiring extensive
+                        periods of consistent skin to skin contact, increases their chances of catching the virus. How
+                        might we raise awareness to male Australians in this industry who are constantly exposed to
+                        extensive skin to skin contact about monkeypox and prevent them from getting the disease?</p>
+                </div>
+            </section>
+
+            <br>
+
+            <section id="architecture" class="fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading">System Architecture</h2>
+                    <h3 class="section-sub-heading">Serverless & Microservice</h3>
+                    <p class="section-content">
+                        Backend was designed based on the microservice architecture following a serverless cloud-native
+                        development model. Function as a Service (FaaS) provides a platform ,which allows rapid build,
+                        run, test and deployment of an application. The characteristic of ‘separation of concern’ allows
+                        future update and maintenance to be performed relatively easily without having to interrupt any
+                        other functioning features.</p>
+
+                    <br>
+
+                    <h3 class="section-sub-heading">Event-driven & FaaS</h3>
+                    <p class="section-content">
+                        FaaS has been divided into two roles, with one responsible for retrieving data from the database
+                        and the other role responsible for updating the data in the database. Regarding the event-driven
+                        characteristics of FaaS, two types of trigger have been used. API calls, as the first trigger,
+                        is essentially a request from the frontend, which will be served as an event invoking the
+                        backend query functions for retrieving data from the database. Scheduled event rules, as the
+                        second trigger, was achieved using AWS CloudWatch to create tailored timed events, which will
+                        serve as the trigger of backend database update functions to update the requested table.
+                    </p>
+
+                    <br>
+
+                    <h3 class="section-sub-heading">Machine-Learning Model</h3>
+                    <p class="section-content">
+                        Size limit of FaaS was a big obstacle for the automation due to the
+                        fact that our team lacked of experience of working with self-developed ML model. Without the
+                        assistance from AWS, the most viable
+                        solution at that time was to utilise both the database and CRON-job scheduling (Linux native
+                        scheduling program) to achieve daily prediction of Monkeypox cases in AU. With database as the
+                        middleware for frontend-tier to request and CRON-job as the scheduling tool to trigger the model
+                        runs and inserts the results into the database daily.
+                    </p>
+                </div>
+
+                <div class="main-img-wrapper">
+                    <img src="./Asset/CharmingApe_architecture_transparent_bg.svg" alt="System Architecture Img"
+                        height="100%" width="100%">
+                </div>
+            </section>
+
+            <br>
+
+            <section id="deployment" class="fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading-0-mrg">Deployment</h2>
+                </div>
+
+                <div class="even-columns">
+                    <div class="left-section">
+                        <div class="main-img-wrapper">
+                            <img src="./Asset/CharmingApe_deployment_transparent_bg.svg" alt="System Architecture Img"
+                                height="100%" width="100%">
+                        </div>
+                    </div>
+
+                    <div class="right-section">
+                        <p class="section-content">To optimise both the cost and performance for small-scale
+                            application, the serverless
+                            architecture was
+                            deemed as the right fit for the backend-tier. AWS Lambda automatically handle scaling from a
+                            single request to
+                            hundreds of thousands per second. The monthly request
+                            price is $0.20 per one million requests and the free tier provides one million requests per
+                            month.</p>
+
+                        <div class="spacer-5"></div>
+
+                        <p class="section-content">Traditional Virtual Machine (VM) deployment was used for the
+                            frontend-tier. On one hand, considering the traffic and budget of the project. On the other,
+                            the Machine-Learning (ML) Model required a host for automation and the VM can be reused for
+                            this purpose.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="full-screen-img-holder"></div>
+    </main>
+
+    <script src="./NavBar/navbar.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

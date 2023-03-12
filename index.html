@@ -58,8 +58,8 @@
             <h2 class="section-heading">ABOUT</h2>
             <p class="section-text"> A highly adaptive and multicultural individual who has a keen interest in frontend
                 development and cloud computing</p> <br>
-            <p class="section-text margin-block-3">Aim to develop T-shape skill set, broad in general, and deep in
-                specific</p> <br>
+            <p class="section-text margin-block-3">Lifelong learner aims to develop T-shaped skill set. Breadth of
+                experience, knowledge & skills, depth of high level expertise in a few discipline.</p> <br>
             <p class="stack"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
                     class="fa-brands fa-square-js"></i><i class="fa-brands fa-aws"></i><i
                     class="fa-brands fa-react"></i><i class="fa-brands fa-python"></i><i
@@ -90,10 +90,13 @@
                         <a href="https://github.com/kinoshita197083/AWS_Rekognition_Object_Detection"
                             target="_blank"><button class="btn">Source Code</button></a>
                         <a href="https://www.rekocloud.click/" target="_blank"><button class="btn">Website</button></a>
+                        <a href="./reko.html"><button class="btn">Read
+                                More</button></a>
                     </p>
                 </article>
             </div>
 
+            <span id="charming-ape"></span>
             <div class="project fade-in">
                 <div class="card-wrapper">
                     <img src="./Asset/IE_cover_page.png" alt="" width="100%" height="90%" loading="lazy">
@@ -115,6 +118,8 @@
                                 class="btn">Source Code</button></a>
                         <a href="https://www.charming-ape.click/" target="_blank"><button
                                 class="btn">Website</button></a>
+                        <a href="./charming_ape.html"><button class="btn">Read
+                                More</button></a>
                     </p>
                 </article>
             </div>
@@ -139,21 +144,6 @@
 
             <div class="project fade-in">
                 <div class="card-wrapper">
-                    <img src="./Asset/FIT5046_project_cover.png" alt="" width="100%" height="90%" loading="lazy">
-                </div>
-                <article class="project-description">
-                    <h3 class="card-title">Android App</h3>
-                    <p class="card-description">Android App developed with an international Agile team using Java and
-                        Jetpack. User authentication was done by using the firebase API and Facebook SDK. Room database
-                        was implemented to store user's data locally.</p>
-                    <p class="stack">Stacks: <i class="fa-brands fa-android"></i><i class="fa-brands fa-java"></i></p>
-                    <p class="stack showcase">
-                    </p>
-                </article>
-            </div>
-
-            <div class="project fade-in">
-                <div class="card-wrapper">
                     <img src="./Asset/FIT5147_project_cover.jpg" alt="" width="100%" height="90%" loading="lazy">
                 </div>
                 <article class="project-description">
@@ -167,6 +157,22 @@
                                 class="btn">Source Code</button></a>
                         <a href="
                         kinoshita197083.github.io" target="_blank"><button class="btn">Website</button></a>
+                    </p>
+                </article>
+            </div>
+
+            <div class="project fade-in">
+                <div class="card-wrapper">
+                    <img src="./Asset/FIT5046_project_cover.png" alt="" width="100%" height="90%" loading="lazy">
+                </div>
+                <article class="project-description">
+                    <h3 class="card-title">Android App</h3>
+                    <p class="card-description">Android App developed with an international Agile team using Java and
+                        Jetpack. User authentication was done by using the firebase API and Facebook SDK. Room database
+                        was implemented to store user's data locally.</p>
+                    <p class="stack">Stacks: <i class="fa-brands fa-android"></i><i class="fa-brands fa-java"></i></p>
+                    <p class="stack showcase">
+                        <button class="btn-unabled">Demo</button>
                     </p>
                 </article>
             </div>
@@ -185,15 +191,17 @@
                 </div>
 
                 <div class="right-section">
-                    <form onsubmit="submitForm" method="POST" id="contact-form">
+                    <form action="https://rfnnynq05f.execute-api.ap-southeast-2.amazonaws.com/prod/portfolio"
+                        method="POST" id="contact-form">
                         <label for="name" class="form-label">Name</label>
-                        <input id="name" class="form-input" type="text" required>
+                        <input id="name" class="form-input" type="text" name="posterName" required>
 
                         <label for="email" class="form-label">Email</label>
-                        <input id="email" class="form-input" type="email" required>
+                        <input id="email" class="form-input" type="email" name="posterEmail" required>
 
                         <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-input" type="text" rows="6" required></textarea>
+                        <textarea id="message" class="form-input" type="text" rows="6" name="posterMsg"
+                            required></textarea>
 
                         <input type="submit" class="submit-btn btn" value="Send">
                     </form>
@@ -204,9 +212,10 @@
     </section>
 
     <div class="snackbar"></div>
+    <div id="full-screen-img-holder"></div>
 
     <script src="NavBar/navbar.js"></script>
-    <script src="./Project/project.js"></script>
+    <script src="./app.js"></script>
     <script src="./Contact/contact.js"></script>
 </body>
 

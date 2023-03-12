@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Website Title & Icon -->
+    <link rel="icon" type="image/x-icon" href="./Asset/portfolio-icon-croped.png">
+    <title>Franky</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/fa0610f9a7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header class="nav-container">
+        <nav class="nav-bar">
+            <div class="nav-logo"><a href="./index.html#project"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#reko" class="nav-links">Intro</a></li>
+                <li><a href="#architecture" class="nav-links">Architecture</a></li>
+                <li><a href="#deployment" class="nav-links">Deployment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="reko" class="fade-in">
+        <div class="container-narrow">
+            <div class="project-section-container">
+                <h1 class="section-heading">Reko</h1>
+                <p class="read-time">5 minute read</p>
+                <p class="section-content">Reko is an image analysing tool that is powered by Amazon Rekognition. It can
+                    detect labels, faces, emotions, texts, and a lot more. However, the current version only supports
+                    label detection.</p>
+
+                <p class="section-content">Label detection enable you to generate metadata for your image libraries for
+                    search and filtering.</p>
+                <p class="section-content">Type: Image Analysis</p>
+            </div>
+
+            <div class="main-img-wrapper">
+                <img src="./Asset/Reko_cover_page.png" alt="System Architecture Img" height="100%" width="100%">
+            </div>
+
+            <section id="architecture" class="fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading">System Architecture</h2>
+                    <h3 class="section-sub-heading">Serverless & Microservice</h3>
+                    <p class="section-content">
+                        Backend was designed based on the microservice architecture following a serverless cloud-native
+                        development model. Function as a Service (FaaS) provides a platform ,which allows rapid build,
+                        run, test and deployment of an application. The characteristic of ‘separation of concern’ allows
+                        future update and maintenance to be performed relatively easily without having to interrupt any
+                        other functioning features.</p>
+
+                    <br>
+
+                    <h3 class="section-sub-heading">Event-driven & FaaS & Rekognition</h3>
+                    <p class="section-content">
+                        For the current version, two lambda functions have been launched for handling image analysis and
+                        image query, individually. Both will be triggered by a POST request from the frontend.
+                    </p>
+                    <p class="section-content">In order to analyse an uploaded image, AWS Rekognition was integrated
+                        with the function using API call. The results as well as the uploaded image will then be stored
+                        in DynamoDB and S3, respectively.</p>
+                    <p class="section-content">To query images based on the labels, user inputs will be matched with the
+                        database to search for related images. Any images that share at least one tag with the user
+                        input will be returned.</p>
+
+                    <br>
+
+                    <h3 class="section-sub-heading">DynamoDB & S3</h3>
+                    <p class="section-content">
+                        DynamoDB, a fully managed serverless noSQL database, which is designed to run in high
+                        performance was adopted for storing the results and the URL of the image.
+                    </p>
+                    <p class="section-content">S3, which has no minimum charge, and claimed to have unlimited storage
+                        was deemed to be the perfect fit for storing uploaded images.</p>
+                </div>
+
+                <div class="main-img-wrapper">
+                    <img src="./Asset/Reko_architecture_transparent_bg.svg" alt="System Architecture Img" height="100%"
+                        width="100%">
+                </div>
+            </section>
+
+            <br>
+
+            <section id="deployment" class="fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading">Deployment</h2>
+                </div>
+
+                <div class="even-columns">
+                    <div class="left-section">
+                        <div class="main-img-wrapper">
+                            <img src="./Asset/reko_deployment_plan_transparent_bg.svg" alt="System Architecture Img"
+                                height="80%" width="100%">
+                        </div>
+                    </div>
+
+                    <div class="right-section">
+                        <p class="section-content">AWS S3 and Cloudfront was used as a combination for the deployment of
+                            the fronten-tier.
+                        </p>
+                        <div class="spacer-5"></div>
+                        <p class="section-content">S3, as the most adopted cloud storage solution, is designed for
+                            extremely
+                            high durability (11 9s), automatically scales to high request rates and encryption at rest.
+                        </p>
+                        <div class="spacer-5"></div>
+                        <p class="section-content">While Cloudfront is a Content Delivery Network (CDN) that allows the
+                            frontend-tier to be
+                            distributed globally so that user based anywhere can access the service quikly and reliably.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="full-screen-img-holder" class=""></div>
+    </main>
+
+    <script src="./NavBar/navbar.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
