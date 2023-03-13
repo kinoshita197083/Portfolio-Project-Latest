@@ -29,7 +29,9 @@
     --section-heading-font-size: 2.5rem;
     --section-sub-heading-font-size: 1.7rem;
     --section-text-font-size: 1.2rem;
-    --section-text-mobile-font-size: 0.9rem;
+    --section-text-mobile-font-size: 0.8rem;
+    --section-content-font-size: 1rem;
+    --section-content-font-size-mobile: 0.8rem;
 
     --profile-bg-color: linear-gradient(45deg,
             #12c2e9,
@@ -121,7 +123,7 @@ a:visited {
 
 .even-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
 }
 
 .margin-bottom-3 {
@@ -154,7 +156,7 @@ a:visited {
     color: var(--theme-font-color);
     font-size: var(--btn-font-size);
     width: 7rem;
-    padding: 1% 1%;
+    padding: 0% 1%;
     border-radius: 3px;
     border: 1px solid transparent;
     transition: all 0.2s ease-in-out;
@@ -173,7 +175,6 @@ a:visited {
     color: var(--theme-font-color);
     font-size: var(--btn-font-size);
     width: 7rem;
-    padding: 1% 1%;
     border-radius: 3px;
     border: 1px solid transparent;
     text-align: center;
@@ -196,6 +197,12 @@ a:visited {
     font-size: var(--section-text-font-size);
     color: var(--theme-font-color);
     width: 50%;
+    line-height: var(--line-height);
+}
+
+.section-content {
+    font-size: var(--section-content-font-size);
+    color: var(--theme-font-color);
     line-height: var(--line-height);
 }
 
@@ -251,11 +258,6 @@ br {
     color: var(--theme-font-color);
 }
 
-.section-content {
-    color: var(--theme-font-color);
-    line-height: var(--line-height);
-}
-
 .section-sub-heading {
     color: var(--theme-font-color);
     font-size: var(--section-sub-heading-font-size);
@@ -291,11 +293,19 @@ br {
 }
 
 @media (max-width: 1000px) {
+    .even-columns {
+        grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+    }
+
     .section-text {
         font-size: var(--section-text-mobile-font-size);
         color: var(--theme-font-color);
         line-height: var(--line-height);
         width: 100%;
+    }
+
+    .section-content {
+        font-size: var(--section-content-font-size-mobile);
     }
 
     br {
@@ -314,9 +324,5 @@ br {
 
     .container-narrow {
         padding: 5% 5%;
-    }
-
-    .section-text {
-        font-size: var(--section-text-mobile-font-size);
     }
 }
