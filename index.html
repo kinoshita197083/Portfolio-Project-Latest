@@ -48,7 +48,7 @@
 
             <article class="landing-content">
                 <h1 class="title">Franky Chen</h1>
-                <p class="sub-title">Frontend Developer <br> <span>AWS Certified Solution Architect Associate</span></p>
+                <p class="sub-title">Software Developer <br> <span>AWS Certified Solution Architect Associate</span></p>
             </article>
         </div>
     </main>
@@ -56,19 +56,27 @@
     <section id="about">
         <article class="about-container">
             <h2 class="section-heading">ABOUT</h2>
-            <p class="section-text"> A highly adaptive and multicultural individual who has a keen interest in frontend
-                development and cloud computing</p> <br>
-            <p class="section-text margin-block-3">Lifelong learner aims to develop T-shaped skill set. Breadth of
-                experience, knowledge & skills, depth of high level expertise in a few discipline.</p> <br>
-            <p class="stack"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
+            <!-- <p class="section-text">
+                <span class="section-text-span">
+                    Full stack Web Dev
+                </span>
+                <span class="section-text-span">Proficient in Frontend
+                </span>
+            </p> <br> -->
+            <!-- <p class="section-text"> Proficient in Frontend</p> <br> -->
+            <p class="section-text margin-block-3">A lifelong learner aspires to cultivate a T-shaped skill set,
+                encompassing a wide spectrum of experiences, knowledge, and abilities, while also delving deeply into a
+                select few disciplines to attain a high level of expertise.</p> <br>
+            <!-- <p class="stack"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
                     class="fa-brands fa-square-js"></i><i class="fa-brands fa-aws"></i><i
                     class="fa-brands fa-react"></i><i class="fa-brands fa-python"></i><i
                     class="fa-brands fa-java"></i><i class="fa-solid fa-database"></i><i
-                    class="fa-brands fa-docker"></i><i class="fa-brands fa-wordpress"></i></p>
+                    class="fa-brands fa-docker"></i><i class="fa-brands fa-wordpress"></i></p> -->
         </article>
         <div class="profile-img-wrapper">
             <img id="profile-pic" src="./Asset/self-crop.png" alt="profile image" width="100%" height="100%">
         </div>
+        <!-- <div class="skill-container"></div> -->
     </section>
 
     <section id="project">
@@ -76,16 +84,46 @@
             <h2 class="section-heading">PROJECT</h2>
             <div class="project fade-in">
                 <div class="card-wrapper">
+                    <img src="./Asset/imagin_community.jpeg" alt="" width="100%" height="90%" loading="lazy">
+                </div>
+                <article class="project-description">
+                    <h3 class="card-title">Icon Generation</h3>
+                    <p class="card-description">A production SaaS allows users to generate custom icons and logos using
+                        Ai-powered technology with just a few clicks. It was developed with
+                        T3-stack (Tailwind, TypeScript, tRPC) and Next.js. OpenAI's Dall-E was integrated for image
+                        generation, while Stripe for online payment. Used prompts were stored in PostgreSQL DB hosted
+                        with Supabase. S3 was used to store and serve b64 encoded image</p>
+                    <p class="stack">Stacks: <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
+                            class="fa-brands fa-react"></i><i class="fa-brands fa-node"></i><i
+                            class="fa-brands fa-aws"></i></i><i class="fa-solid fa-database"></i>
+                        <img src="./Asset/stripe.svg" class="icon" />
+                        <img src="./Asset/nextjs_white.svg" class="icon" />
+                        <img src="./Asset/openai_white.svg" class="icon" />
+                    </p>
+                    <p class="stack showcase">
+                        <a href="https://github.com/kinoshita197083/AWS_Rekognition_Object_Detection"
+                            target="_blank"><button class="btn-unabled" disabled>Source Code</button></a>
+                        <a href="https://www.imaginworld.com/" target="_blank"><button class="btn">Website</button></a>
+                        <a href="./imagin.html"><button class="btn">Read
+                                More</button></a>
+                    </p>
+                </article>
+            </div>
+
+            <div class="project fade-in">
+                <div class="card-wrapper">
                     <img src="./Asset/Reko_cover_page.png" alt="" width="100%" height="90%" loading="lazy">
                 </div>
                 <article class="project-description">
                     <h3 class="card-title">Image Analysis</h3>
                     <p class="card-description">An image analysis web App that can detect image label powered by AWS
-                        Rekognition - AI web service. It is a multi-tier architecture with VanillaJs as frontend, AWS
+                        Rekognition - AI web service. It is a multi-tier architecture with React, Redux as frontend, AWS
                         Lambda (python) as backend, and DynamoDB (NoSQL) as the database tier.</p>
                     <p class="stack">Stacks: <i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i
-                            class="fa-brands fa-square-js"></i><i class="fa-brands fa-aws"></i><i
-                            class="fa-brands fa-python"></i><i class="fa-solid fa-database"></i></p>
+                            class="fa-brands fa-react"></i><i class="fa-brands fa-aws"></i><i
+                            class="fa-brands fa-python"></i><i class="fa-solid fa-database"></i>
+                        <img src="./Asset/redux.svg" class="icon" />
+                    </p>
                     <p class="stack showcase">
                         <a href="https://github.com/kinoshita197083/AWS_Rekognition_Object_Detection"
                             target="_blank"><button class="btn">Source Code</button></a>
@@ -216,6 +254,7 @@
 
     <script src="NavBar/navbar.js"></script>
     <script src="./app.js"></script>
+    <script src="./skills.js"></script>
     <script src="./Contact/contact.js"></script>
 </body>
 

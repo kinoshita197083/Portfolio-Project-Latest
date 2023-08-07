@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Website Title & Icon -->
+    <link rel="icon" type="image/x-icon" href="./Asset/portfolio-icon-croped.png">
+    <title>Franky</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/fa0610f9a7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header class="nav-container">
+        <nav class="nav-bar">
+            <div class="nav-logo"><a href="./index.html#project"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#reko" class="nav-links">Intro</a></li>
+                <li><a href="#architecture" class="nav-links">Architecture</a></li>
+                <li><a href="#deployment" class="nav-links">Deployment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="reko" class="fade-in">
+        <div class="container-narrow">
+            <div class="project-section-container">
+                <h1 class="section-heading">Imgain</h1>
+                <p class="read-time">6 minute read</p>
+                <p class="section-content">Imagin is a public-facing SaaS product that has been officially launched on
+                    Product Hunt Platform. It is an Ai-powered icon/logo generation design tool targeting small-medium
+                    companies and individuals, which allows rapid design and generation with high customisability.</p>
+
+                <p class="section-content">Each new user will automatically grant 5 free credits, 1 credit
+                    is
+                    spent for each generation. User will be able to revisit their previously generated icons and logos
+                    anytime by visting their profile page.</p>
+
+                <p class="section-content">Imagin is now ranking at #28 on weekly launch board, and has 70+ upvotes on
+                    Product Hunt.</p>
+
+                <a href="https://www.producthunt.com/posts/imagin?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-imagin"
+                    target="_blank"><button class="btn">Visit Us</button>
+                </a>
+                <p class="section-content">Type: Icon generation, Ai design tool</p>
+            </div>
+
+            <div class="main-img-wrapper">
+                <img src="./Asset/producthunt.jpg" alt="System Architecture Img" height="100%" width="100%">
+            </div>
+
+            <section id="architecture" class="fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading">System Architecture</h2>
+
+                    <h3 class="section-sub-heading">Next.js Tailwind TypeScript</h3>
+                    <p class="section-content">
+                        Frontend was developed with Next.js - SeverSideRendering (SSR) framework (Version 12.x - page
+                        routing), and integrated Tailwind CSS which
+                        enable enahanced performance by delivering pre-rendered content to users, and enable high
+                        productivity on producing maintainable,
+                        adaptive, and mobile-friendly UI layout.
+                    </p>
+                    <p class="section-content">
+                        Pre-rendering allows search engine to easily crawl and index the complete HTML file, which helps
+                        with SEO optimisations.
+                    </p>
+                    <p class="section-content">
+                        As for Authentication, NextAuth, extended with Google, Discord and AWS SES Email Auth, has been
+                        integrated to the Application allowing immediately usage of our service.</p>
+                    </p>
+
+                    <br>
+
+                    <h3 class="section-sub-heading">tRPC</h3>
+                    <p class="section-content">tRPC was utilised to handle backend workload considering it's a thin
+                        backend application, it integrates seamlessly with Next.js.</p>
+                    <p class="section-content">
+                        tRPC is a TypeScript-based framework for building strongly typed APIs in web applications. It is
+                        designed to simplify the process of defining,
+                        consuming, and interacting with APIs while leveraging TypeScript's static type checking
+                        capabilities.
+                    </p>
+                    <br />
+                    <p class="section-content">The use of strongly typed APIs and auto-generated code leads to an
+                        improved developer experience. You can catch errors at compile time and benefit from
+                        TypeScript's IntelliSense for API usage, resulting significant productivity boost, especially
+                        for solo-developer or small dev team.</p>
+
+                    <br>
+
+                    <h3 class="section-sub-heading">PostgreSQL & S3</h3>
+                    <p class="section-content">
+                        Used prompts for icon generations will be stored in a production PostgreSQL Database hosting on
+                        Supabase while AWS S3 is used to host and serve the static assets.
+                    </p>
+                    <p class="section-content">S3, which has no minimum charge, and claimed to have unlimited storage
+                        was deemed to be the perfect fit for storing generated images.</p>
+                </div>
+
+                <div class="main-img-wrapper">
+                    <img src="./Asset/imagin_architecture.svg" alt="System Architecture Img" height="100%" width="100%">
+                </div>
+            </section>
+
+            <br>
+
+            <section id="deployment" class="fade-in">
+                <div class="project-section-container">
+                    <h2 class="section-heading">Deployment</h2>
+                </div>
+
+                <div class="even-columns">
+                    <div class="left-section">
+                        <div class="main-img-wrapper">
+                            <img src="./Asset/amplify.jpeg" alt="System Architecture Img" height="60%" width="70%">
+                        </div>
+                    </div>
+
+                    <div class="right-section">
+                        <p class="section-content">The SaaS product adopted serverless solution, allowing small-scale
+                            business to focus on development rather than spending large amount of resources on
+                            deployment configurations.
+                        </p>
+
+                        <div class="spacer-5"></div>
+                        <p class="section-content">For pricing, AWS Lambda does offer a free tier including 1
+                            million requests per month and 400,000 GB-seconds of compute time per month.
+                        </p>
+                        <div class="spacer-5"></div>
+                        <p class="section-content">In summary, AWS Amplify empowers developers to focus on creating
+                            engaging user experiences while leveraging powerful cloud capabilities.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="full-screen-img-holder" class=""></div>
+    </main>
+
+    <script src="./NavBar/navbar.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

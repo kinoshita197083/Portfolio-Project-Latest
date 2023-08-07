@@ -65,6 +65,7 @@ input {
 
     .left-section {
         margin-block: 10%;
+        margin: 0 auto;
     }
 
     .right-section {
